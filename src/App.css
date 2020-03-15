@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,15 +21,46 @@
   color: #61dafb;
 }
 
+.container {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column;
+  border: 0px solid red;
+  align-items: center;
+}
+
 ul {
   padding: 0;
-  width: 400px;
-  margin: 20px auto;
+  list-style-type: none;
 }
 
 li{
   text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0px;
+  cursor: pointer;
+  min-width: 250px;
 }
+
+li:hover::after {
+  content: '\02A2F';   
+  color: red;
+  font-size: 18px;
+  float: right;
+  margin-right: 5px;
+   /* https://unicode-table.com/it/sets/top-emoji/ */
+}
+
+li span::after {
+  content: '\025A1';
+  font-size: 28px;
+  padding: 4px;
+}
+
+li:last-child {
+  border: 0px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

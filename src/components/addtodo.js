@@ -1,5 +1,4 @@
-import React, {Fragment} from 'react'
-import {addTodo} from '../actions/index'
+import React from 'react'
 
 
 export default function addTodoComponent ({addnew}) {

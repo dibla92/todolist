@@ -7,15 +7,16 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'  //Creare uno store, l' unico modo di cambiare i dati nello store è il dispatch()
 import storeReducer from './reducers/index'
 
-let todos = [
-    'fare la spesa',
-    'fare i compiti',
-    'chiamare la mamma'
+let storeTodos = {
+  todos: [
+    {id:0, todo: 'fare la spesa', completed: false},
+    {id:1, todo: 'fare i compiti', completed: false},
+    {id:2, todo: 'chiamare la mamma', completed: true}
   ]
+};
   
   
-  
-const store = createStore(storeReducer, { todos: [...todos] });
+const store = createStore(storeReducer, { todos: [...storeTodos.todos] });
 
 ReactDOM.render(
 <Provider store = {store}>

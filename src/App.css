@@ -51,7 +51,19 @@ li:hover::after {
    /* https://unicode-table.com/it/sets/top-emoji/ */
 }
 
-li span::after {
+span.completed::after {
+  content: '\02713';
+  font-size: 28px;
+  padding: 4px;
+  color:green;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color:red;
+}
+
+span.uncompleted::after {
   content: '\025A1';
   font-size: 28px;
   padding: 4px;

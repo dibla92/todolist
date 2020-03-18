@@ -8,6 +8,7 @@ import {createStore} from 'redux'  //Creare uno store, l' unico modo di cambiare
 import storeReducer from './reducers/index'
 
 let storeTodos = {
+  activeFilter: 'ALL',
   todos: [
     {id:0, todo: 'fare la spesa', completed: false},
     {id:1, todo: 'fare i compiti', completed: false},
@@ -15,9 +16,22 @@ let storeTodos = {
   ]
 };
   
+if(localStorage.getItem('mytodolist')) {
+  const currState = JSON.parse(localStorage.getItem('mytodolist'));
+  if(currState){
+    storeTodos = currState;
+  }
+}
   
-const store = createStore(storeReducer, { todos: [...storeTodos.todos] });
-store.subscribe(()=> console.log('getState'+ store.getState()));
+const store = createStore(storeReducer, { ...storeTodos },
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+store.subscribe(()=>  {
+  const currState = JSON.stringify(store.getState());
+  localStorage.setItem('mytodolist', currState);
+});
+
 ReactDOM.render(
 <Provider store = {store}>
 <App />

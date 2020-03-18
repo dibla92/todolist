@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './todo'
 
-export default function todoList({todos, removeTodo, toggleTodo}) {
+export default function todoList({todos, toggleTodo}) {
     return(
         <ul>
             {

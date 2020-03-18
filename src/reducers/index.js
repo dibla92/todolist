@@ -2,6 +2,8 @@ export default function storeReducer(state = {}, action) {
     switch(action.type) {
       case 'ADD_TODO': 
         return {
+          // ...state,
+          activeFilter: 'TODO',
           todos: [
             {
               id: state.todos.length,
@@ -13,6 +15,7 @@ export default function storeReducer(state = {}, action) {
         }
       case 'REMOVE_TODO' :
         return {
+          ...state,
           todos: [
             ...state.todos.slice(0, action.id),
             ...state.todos.slice( action.id +1),
@@ -25,7 +28,7 @@ export default function storeReducer(state = {}, action) {
           }
       case 'TOGGLE_TODO' :
         return {
-          // todo = state.todos.find( todo => todo.id == action.id)
+          ...state,
           todos: state.todos.map((todo) => {
             if(todo.id != action.id) {
               return todo;

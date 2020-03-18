@@ -18,6 +18,11 @@ export default function storeReducer(state = {}, action) {
             ...state.todos.slice( action.id +1),
           ]
         }
+        case 'SET_FILTER' :
+          return {
+            ...state,
+            activeFilter: action.activeFilter
+          }
       case 'TOGGLE_TODO' :
         return {
           // todo = state.todos.find( todo => todo.id == action.id)

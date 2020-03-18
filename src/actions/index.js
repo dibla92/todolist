@@ -11,6 +11,14 @@ export const addTodo = (todo) => {
 
   }
 
+  export const filterTodo = (filter = 'ALL') => {
+    return {
+      type: 'SET_FILTER',
+      activeFilter: filter
+    }
+
+  }
+
   export const toggleTodo = (i) => {
     return {
       type: 'TOGGLE_TODO',

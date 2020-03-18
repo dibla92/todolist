@@ -17,7 +17,7 @@ let storeTodos = {
   
   
 const store = createStore(storeReducer, { todos: [...storeTodos.todos] });
-
+store.subscribe(()=> console.log('getState'+ store.getState()));
 ReactDOM.render(
 <Provider store = {store}>
 <App />

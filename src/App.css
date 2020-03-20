@@ -29,6 +29,27 @@
   align-items: center;
 }
 
+.buttonRemove {
+  display: flex;
+  max-height: fit-content;
+}
+
+.buttonRemove button {
+  max-height: 20px;
+  margin-top: 22px;
+  margin-left: 15px;
+}
+
+.buttonRemove button:hover {
+  color:red;
+}
+
+.donttouch {
+  border: 1px grey solid;
+  padding-right:20px;
+  margin-left: 10px;
+}
+
 ul {
   padding: 0;
   list-style-type: none;

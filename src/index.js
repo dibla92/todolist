@@ -7,15 +7,9 @@ import {Provider} from 'react-redux'
 import {applyMiddleware, createStore, compose} from 'redux'  //Creare uno store, l' unico modo di cambiare i dati nello store è il dispatch()
 import storeReducer from './reducers/index'
 import logger from 'redux-logger'; //senza questo si puo vedere come farlo manualmente in fondo alla pagina
+import promise from 'redux-promise-middleware';
 
-let storeTodos =  {
-  activeFilter: 'ALL',
-  todos: [
-    {id:0, todo: 'fare la spesa', completed: false},
-    {id:1, todo: 'fare i compiti', completed: false},
-    {id:2, todo: 'chiamare la mamma', completed: true}
-  ]
-};
+let storeTodos = {};
   
 if(localStorage.getItem('mytodolist')) {
   const currState = JSON.parse(localStorage.getItem('mytodolist'));
@@ -25,9 +19,10 @@ if(localStorage.getItem('mytodolist')) {
 }
 
 
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(storeReducer, { ...storeTodos }, 
-  composeEnhancers(applyMiddleware(logger))
+  composeEnhancers(applyMiddleware(logger, promise))
 );
 
 

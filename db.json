@@ -1,3 +1,19 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "todo": "andare al supermercato",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "todo": "compiti a casa",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "todo": "prendere la spesa",
+      "completed": false,
+      "id": 3
+    }
+  ]
 }

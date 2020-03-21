@@ -5,10 +5,14 @@ import Header from './components/header'
 import AddNewTodo from './containers/addnew'
 import MyTodoList from './containers/mytodolist'
 import MyFooterContainer from './containers/todofootercontainer'
-
+import {connect} from 'react-redux';
+import {getTodos} from './actions'
 
 class App extends Component {
 
+  componentDidMount() {
+    this.props.getTodos();
+  }
 
   render() {
     return (
@@ -26,4 +30,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default connect(null, {getTodos: getTodos})(App);

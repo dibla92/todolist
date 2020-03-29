@@ -18,7 +18,8 @@ come se passiamo store.getState()
 const mapStateToProps = (state) => {   //si puo chiamare in qualunque modo, basta che è una funzione che torna un oggetto
     console.log('store' + JSON.stringify(state.todos))
     return {
-        todos: filterMyTodos(state.todos, state.activeFilter)
+        ...state,
+        todos: filterMyTodos(state.todos, state.setFilter)
     }
 }
 

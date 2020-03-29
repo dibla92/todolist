@@ -7,6 +7,7 @@ import MyTodoList from './containers/mytodolist'
 import MyFooterContainer from './containers/todofootercontainer'
 import {connect} from 'react-redux';
 import {getTodos} from './actions'
+import Errorboundary from './components/errorboundary';
 
 class App extends Component {
 
@@ -20,7 +21,9 @@ class App extends Component {
         <Header/>
         <div className="container">
           <AddNewTodo/>
-          <MyTodoList />  
+          <Errorboundary>
+             <MyTodoList />  
+          </Errorboundary>
           {/* MyTodoList è il componente che avvolge il componente todolist che si occupa di mostrare i todos che sono
           immagazzinati nello store (forniti dal provider nell' index principale) */}
           <MyFooterContainer />

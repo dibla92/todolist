@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
 
 export default function addTodoComponent ({addnew}) {
@@ -22,4 +23,8 @@ export default function addTodoComponent ({addnew}) {
             }>Add</button>
         </div>
     )
+}
+
+addTodoComponent.propTypes = {
+    addnew: propTypes.func.isRequired
 }

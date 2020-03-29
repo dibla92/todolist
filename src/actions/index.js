@@ -1,10 +1,10 @@
-import { APIURL } from '../config/config';
+import { APIURL, APIFILTERURL } from '../config/config';
 import axios from 'axios';
-
+import {TODOS, ADD_TODO, REMOVE_TODO, TOGGLE_TODO, SET_FILTER} from './actiontypes'
 export const getTodos = () => {
     
   return {
-    type: 'TODOS',
+    type: TODOS,
     payload: axios.get(APIURL)
   }
 
@@ -13,7 +13,7 @@ export const getTodos = () => {
 export const addTodo = (todo) => {
     
     return {
-      type: 'ADD_TODO',
+      type: ADD_TODO,
       payload: axios.post(APIURL, {
         todo: todo,
         completed: false
@@ -25,17 +25,32 @@ export const addTodo = (todo) => {
 
   export const filterTodo = (filter = 'ALL') => {
     return {
-      type: 'SET_FILTER',
-      activeFilter: filter
+      type: SET_FILTER,
+      payload: axios.post(APIFILTERURL, 
+      {filter}
+      )
     }
 
   }
 
+  // export const toggleTodo = (i, value) => {
+  //   return {
+  //     type: 'TOGGLE_TODO',
+  //     payload: axios.post(APIURL,
+  //     {completed: value},
+  //     {id: i}
+  //     )
+  //     // id: i   // significa todo: todo se chiave valore hanno lo stesso nome si puo abbreviare
+  //   }
+
+  // }
+
   export const toggleTodo = (i, value) => {
     return {
-      type: 'TOGGLE_TODO',
+      type: TOGGLE_TODO,
       payload: axios.patch(APIURL +'/' + i,
-      {completed: value}
+      {completed: value},
+      {id: i}
       )
       // id: i   // significa todo: todo se chiave valore hanno lo stesso nome si puo abbreviare
     }
@@ -44,8 +59,9 @@ export const addTodo = (todo) => {
 
   export const removeTodo = (i) => {
     return {
-      type: 'REMOVE_TODO',
-      id: i   // significa todo: todo se chiave valore hanno lo stesso nome si puo abbreviare
+      type: REMOVE_TODO,
+      payload: axios.delete(APIURL +'/' + i, {id: i})
+      // id: i   // significa todo: todo se chiave valore hanno lo stesso nome si puo abbreviare
     }
 
   }

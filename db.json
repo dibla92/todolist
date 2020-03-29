@@ -1,19 +1,22 @@
 {
   "todos": [
     {
-      "todo": "andare al supermercato",
-      "completed": false,
-      "id": 1
-    },
-    {
-      "todo": "compiti a casa",
-      "completed": false,
+      "todo": "fare la sepsa",
+      "completed": true,
       "id": 2
     },
     {
-      "todo": "prendere la spesa",
+      "todo": "RWE",
       "completed": false,
-      "id": 3
+      "id": 5
+    },
+    {
+      "todo": "erwwe",
+      "completed": false,
+      "id": 6
     }
-  ]
+  ],
+  "activeFilter": {
+    "filter": "ALL"
+  }
 }

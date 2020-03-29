@@ -4,7 +4,7 @@ import {filterTodo} from '../actions/index'
 
 const mapStatetoProps = (state, ownProps) => {
     return {
-        activeFilter: state.activeFilter
+        activeFilter: state.setFilter
     }
 }
 

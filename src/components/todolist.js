@@ -9,7 +9,7 @@ export default function todoList(props
         throw new Error(props.error.errorMessage);
     }
     return(
-        <ul>
+        <ul className="todos">
             {
                 props.todos.map((todo, i) => <Todo Id = {todo.id} key={todo.id} todoItem={todo}
                     {...props}

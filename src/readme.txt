@@ -11,3 +11,7 @@ PS C:\myWork\todolist-redux> npm install axios
 
 
 corsE disabled, ma dovrebbe bastare il mio
+
+# nell' url interessa solo al client mentre /& al server e con window.location.hash vedi ciò che c'è dopo il #
+
+MESSO DENTRO PROVIDER PER VEDERE COME ACCEDERE ALLA STORE ATTRAVERSO LE ROTTE

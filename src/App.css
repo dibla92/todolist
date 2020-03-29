@@ -50,13 +50,13 @@
   margin-left: 10px;
 }
 
-ul {
+ul.todos {
   padding: 0;
   list-style-type: none;
   min-height: 200px;
 }
 
-li{
+li.todos{
   text-align: left;
   border-bottom: 1px solid #ddd;
   padding: 10px 0px;
@@ -95,11 +95,28 @@ li:last-child {
   border: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul.menu li{
+  display: inline-block;
+  min-width: 120px;
+}
+
+ul.menu li a {
+  font-size: .95em;
+  color: #fff;
+  padding: 1em;
+  transition: .2s;
+  text-decoration: none;
+}
+
+ul.menu li a:hover,
+ul.menu li a:active {
+  color: #ff0000;
+  padding: 1em;
+  background-color: #3b80d1;
+  text-decoration: underline;
+}
+
+ul.menu a.active {
+  background-color: #3b80d1;
+  text-decoration: none;
 }

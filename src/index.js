@@ -7,7 +7,8 @@ import {Provider} from 'react-redux'
 import {applyMiddleware, createStore, compose} from 'redux'  //Creare uno store, l' unico modo di cambiare i dati nello store è il dispatch()
 import storeReducer from './reducers/index'
 import logger from 'redux-logger'; //senza questo si puo vedere come farlo manualmente in fondo alla pagina
-import promise from 'redux-promise-middleware';
+import promise from 'redux-promise-middleware'; //FULFILLED, REJECTED
+import { BrowserRouter, Route } from 'react-router-dom';
 
 let storeTodos = {
   todos: [],
@@ -43,7 +44,9 @@ store.subscribe(()=>  {
 
 ReactDOM.render(
 <Provider store = {store}>
-<App />
+<BrowserRouter>
+<Route path='/' component={App}></Route>
+</BrowserRouter>
 </Provider>
 , document.getElementById('root'));
 

@@ -2,21 +2,27 @@
   "todos": [
     {
       "todo": "fare la sepsa",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
-      "todo": "RWE",
+      "todo": "spesa",
       "completed": false,
-      "id": 5
+      "id": 7
     },
     {
-      "todo": "erwwe",
+      "todo": "compiti",
       "completed": false,
-      "id": 6
+      "id": 8
     }
   ],
   "activeFilter": {
     "filter": "ALL"
-  }
+  },
+  "lists": [
+    {
+      "id": 0,
+      "name": "Spesa supermercato"
+    }
+  ]
 }

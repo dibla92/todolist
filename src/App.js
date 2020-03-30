@@ -7,7 +7,8 @@ import {getTodos} from './actions/index'
 import {getLists} from './actions/lists'
 import Mytodos from './containers/mytodos'
 import { Route } from 'react-router-dom';
-import Lists from './containers/list' 
+import Lists from './components/list' 
+import MyTodoLists from './containers/mytodolists'
 
 class App extends Component {
 
@@ -22,7 +23,7 @@ class App extends Component {
         <Header/>
         <Route path="(/|/todos)" component={Mytodos} />
 
-        <Route path="/lists" exact component={Lists} />
+        <Route path="/lists" exact component={MyTodoLists} />
       </div>
     );
   }

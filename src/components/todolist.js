@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Todo from './todo'
 import propTypes from 'prop-types'
 
-export default function todoList(props
-    // {todos, toggleTodo, removeTodo}
-    ) {
-    if(props.error.hasError) {
-        throw new Error(props.error.errorMessage);
+export default class TodoList extends Component{
+
+    constructor(props) {
+        super(props);
+        if(props.error.hasError) {
+            throw new Error(props.error.errorMessage);
+        }
     }
-    return(
-        <ul className="todos">
-            {
-                props.todos.map((todo, i) => <Todo Id = {todo.id} key={todo.id} todoItem={todo}
-                    {...props}
-                    // onClick = {toggleTodo} todoItem={todo} removeTodo = {removeTodo} 
-                /> ) 
-            }
-        </ul>
-    );
+
+    componentDidMount() {
+        this.props.getTodos(this.props.list)
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.list != prevProps.list) {
+          this.props.getTodos(this.props.list)
+        }
+      }
+
+    render() {
+        return(
+            <ul className="todos">
+                {
+                    this.props.todos.map((todo, i) => <Todo Id = {todo.id} key={todo.id} todoItem={todo}
+                        {...this.props}
+                        // onClick = {toggleTodo} todoItem={todo} removeTodo = {removeTodo} 
+                    /> ) 
+                }
+            </ul>
+        );
+    }
 }
 
-todoList.propTypes = {
+TodoList.propTypes = {
     props: propTypes.shape({
         hasError: propTypes.bool,
         errorMessage: propTypes.string,

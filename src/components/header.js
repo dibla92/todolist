@@ -10,7 +10,7 @@ export default function header() {
             <NavLink exact activeStyle={{backgroundColor:'red'}} to="/">my todo list</NavLink>
             </li>
             <li><NavLink activeClassName="active" to="/lists">LISTS</NavLink></li>
-            <li><NavLink activeClassName="active" to="/todos">TODOS</NavLink></li>
+            <li><NavLink activeClassName="active" to="/todos">ALL TODOS</NavLink></li>
             <li><NavLink activeClassName="active" to="/signup">SIGN  UP</NavLink></li>
             <li><NavLink activeClassName="active" to="/login">LOGIN</NavLink></li>
           </ul>

@@ -1,6 +1,6 @@
 import TodoList from '../components/todolist';
 import {connect} from 'react-redux';
-import {removeTodo, toggleTodo} from '../actions/index'
+import {removeTodo, toggleTodo, getTodos} from '../actions/index'
 
 const filterMyTodos = (todos = [], filter='ALL') => {
     switch(filter) {
@@ -25,7 +25,8 @@ const mapStateToProps = (state) => {   //si puo chiamare in qualunque modo, bast
 
 const methods = {
     removeTodo : removeTodo,
-    toggleTodo : toggleTodo
+    toggleTodo : toggleTodo,
+    getTodos : getTodos
 }
 
 const myConnect = connect(mapStateToProps, methods)  // serve ad abbonarsi allo store che è nell' index, in sostanza primo parametro per passare parametri secondo per passare i metodi da dispatchare

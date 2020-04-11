@@ -1,19 +1,22 @@
 {
   "todos": [
     {
-      "todo": "fare la sepsa",
+      "todo": "chiamare emanuele",
+      "list": 0,
+      "completed": false,
+      "id": 1
+    },
+    {
+      "todo": "frutta e verdura",
+      "list": 2,
       "completed": false,
       "id": 2
     },
     {
-      "todo": "spesa",
+      "todo": "carne bianca",
+      "list": 2,
       "completed": false,
-      "id": 7
-    },
-    {
-      "todo": "compiti",
-      "completed": false,
-      "id": 8
+      "id": 3
     }
   ],
   "activeFilter": {
@@ -21,8 +24,8 @@
   },
   "lists": [
     {
-      "id": 0,
-      "name": "Spesa supermercato"
+      "name": "spesa",
+      "id": 2
     }
   ]
 }

@@ -1,15 +1,35 @@
-import React, {Component} from 'react';
+import React from 'react';
+import propTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-export default function list({lists, addList, removeList}){
-    console.log(lists);
-    return (
-        <div className="container">
-            <h1>LISTS</h1>
-            <ul className="lists">
-                {
-                    lists.map(list => <li key={list.id}> {list.name}</li>)
+export default function list({listItem, removeList}) {
+    return(
+        <li>
+            <Link to={{
+                pathname: '/lists/'+ listItem.id + '/todos',
+                state: {
+                    listName: listItem.name
                 }
-            </ul>
-        </div>
-    )
+                }}>
+            {listItem.name} 
+            </Link>
+            <span className="cross" onClick= { (evt) => {
+                    evt.stopPropagation();
+                    removeList(listItem.id)
+                }
+            }></span>
+        </li>
+    );
 }
+
+
+// todo.propTypes = {
+//     todoItem: propTypes.shape({
+//         completed: propTypes.bool,
+//         todo: propTypes.string,
+//         id: propTypes.number
+//     }),
+//     toggleTodo: propTypes.func.isRequired,
+//     id: propTypes.number,
+//     removeTodo: propTypes.func.isRequired
+// }

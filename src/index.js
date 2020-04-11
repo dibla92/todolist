@@ -38,7 +38,7 @@ store.subscribe(()=>  {
   const state = store.getState();
   if(!state.error.hasError) {
     const currState = JSON.stringify(state);
-    localStorage.setItem('mytodolist', currState);
+    // localStorage.setItem('mytodolist', currState);
   }
 });
 

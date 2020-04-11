@@ -6,14 +6,14 @@ import {connect} from 'react-redux';
 import {getTodos} from './actions/index'
 import {getLists} from './actions/lists'
 import Mytodos from './containers/mytodos'
-import { Route } from 'react-router-dom';
-import Lists from './components/list' 
+import { Route, Switch } from 'react-router-dom'; //Switch: verifica ogni rotta e la prima che combacia con l' url si ferma
+import Lists from './components/lists' 
 import MyTodoLists from './containers/mytodolists'
 
 class App extends Component {
 
   componentDidMount() {
-    this.props.getTodos();
+    // this.props.getTodos();
     this.props.getLists();
   }
 
@@ -21,9 +21,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Route path="(/|/todos)" component={Mytodos} />
+        <Switch> 
+          <Route path="(/|/todos)" component={Mytodos} />
+          <Route path="/lists/:list([0-9]+)/todos" component={Mytodos} />
 
-        <Route path="/lists" exact component={MyTodoLists} />
+          <Route path="/lists" component={MyTodoLists} />
+          <Route path="/signup"  render = {()=> <div>SIGN UP</div>} />
+          <Route path="/login" render = {()=> <div title="LOGIN">log in </div>} />
+        </Switch>
       </div>
     );
   }

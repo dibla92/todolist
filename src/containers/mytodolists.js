@@ -1,5 +1,5 @@
 import React from 'react';
-import lists from '../components/list';
+import lists from '../components/lists';
 import {addList, removeList, getLists} from '../actions/lists'
 import {connect} from 'react-redux';
 

@@ -3,10 +3,15 @@ import axios from 'axios';
 import {TODOS, ADD_TODO, REMOVE_TODO, TOGGLE_TODO, SET_FILTER} from './actiontypes'
 
 
-export const getTodos = ( list = 0) => {    
+export const getTodos = ( list = 0, filter = 'ALL') => {    
   return {
     type: TODOS,
-    payload: axios.get(APIURL + '?list_id='+ list, {list})
+    payload: axios.get(APIURL,
+      {params: {
+        list_id: list,
+        filter: filter
+      }
+    })
   }
 
 }

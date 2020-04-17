@@ -110,14 +110,32 @@ ul.menu li a {
 }
 
 ul.menu li a:hover,
-ul.menu li a:active {
+ul.menu.header li a:active {
   color: #ff0000;
   padding: 1em;
   background-color: #3b80d1;
   text-decoration: underline;
 }
 
-ul.menu a.active {
+ul.menu.header a.active {
   background-color: #3b80d1;
   text-decoration: none;
+}
+
+ul.footer {
+  background-color: transparent;
+}
+
+ul.footer li {
+  background-color: #282c34;
+  padding: 5px;
+}
+
+ul.footer li.active {
+  background-color: #3b80d1;
+  color: #fff;
+}
+ul.footer li a:hover {
+  text-decoration: none;
+  background-color: transparent!important;
 }

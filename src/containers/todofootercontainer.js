@@ -1,6 +1,7 @@
 import TodoFooter from '../components/todofooter';
 import {connect} from 'react-redux';
-import {filterTodo} from '../actions/index'
+import {filterTodo} from '../actions/index';
+import {withRouter} from 'react-router-dom';
 
 const mapStatetoProps = (state, ownProps) => {
     return {
@@ -13,9 +14,4 @@ const methods = {
 }
 
  // serve ad abbonarsi allo store che è nell' index, se passo null vuol dire che passo l' oggetto dispatch
-const myConnect = connect(mapStatetoProps, methods) 
-const MyFooterContainer = myConnect(TodoFooter);
-
-
-
-export default MyFooterContainer;
+export default withRouter(connect(mapStatetoProps, methods)(TodoFooter))

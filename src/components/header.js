@@ -5,7 +5,7 @@ export default function header() {
     return (
       <header className="App-header">
         <nav>
-          <ul className="menu">
+          <ul className="menu header">
             <li>
             <NavLink exact activeStyle={{backgroundColor:'red'}} to="/">my todo list</NavLink>
             </li>

@@ -12,3 +12,6 @@ export const APIURL = LARAVEL_API + 'todos';
 export const APIFILTERURL = LARAVEL_API + 'activeFilter';
 
 export const APILISTURL =  LARAVEL_API + 'todolists';
+
+
+export const AUTH_URL = LARAVEL_API + 'api/auth/';

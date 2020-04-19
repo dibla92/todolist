@@ -139,3 +139,48 @@ ul.footer li a:hover {
   text-decoration: none;
   background-color: transparent!important;
 }
+
+.form,.login {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.form-group {
+  margin:10px;
+}
+
+.form-group input {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 5px;
+  background-color: #fff;
+  color:#222;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  min-width: 120px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #3b80d1;
+  color:#fff;
+}
+
+.buttons{
+  display: flex;
+  align-items: stretch;
+}
+
+button[type=reset]{
+  background-color: #fff;
+  color: #222;
+}

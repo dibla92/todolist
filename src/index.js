@@ -19,12 +19,12 @@ let storeTodos = {
   }
 };
   
-if(localStorage.getItem('mytodolist')) {
-  const currState = JSON.parse(localStorage.getItem('mytodolist'));
-  if(currState && !currState.error.hasError){
-    storeTodos = currState;
-  }
-}
+// if(localStorage.getItem('mytodolist')) {
+//   const currState = JSON.parse(localStorage.getItem('mytodolist'));
+//   if(currState && !currState.error.hasError){
+//     storeTodos = currState;
+//   }
+// }
 
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -34,13 +34,13 @@ const store = createStore(storeReducer, { ...storeTodos },
 );
 
 
-store.subscribe(()=>  {
-  const state = store.getState();
-  if(!state.error.hasError) {
-    const currState = JSON.stringify(state);
-    // localStorage.setItem('mytodolist', currState);
-  }
-});
+// store.subscribe(()=>  {
+//   const state = store.getState();
+//   if(!state.error.hasError) {
+//     const currState = JSON.stringify(state);
+//     // localStorage.setItem('mytodolist', currState);
+//   }
+// });
 
 ReactDOM.render(
 <Provider store = {store}>

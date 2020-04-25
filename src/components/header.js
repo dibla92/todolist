@@ -18,8 +18,10 @@ export default function header() {
             </>
             : null}
             {
-              user ? null : (
-                <>
+              user ? 
+              <li><span style={{color:'red'}}>Welcome {user.name} </span> <NavLink  to="/logout">LOGOUT</NavLink></li>
+              : 
+              (<>
             <li><NavLink activeClassName="active" to="/signup">SIGN  UP</NavLink></li>
             <li><NavLink activeClassName="active" to="/login">LOGIN</NavLink></li>
             </>

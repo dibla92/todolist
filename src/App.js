@@ -10,6 +10,8 @@ import { Route, Switch } from 'react-router-dom'; //Switch: verifica ogni rotta 
 import Login from './components/login';
 import SignUp from './components/signup';
 import MyTodoLists from './containers/mytodolists';
+import PrivateRoute from './containers/privateroute';
+import Logout from './components/logout';
 
 class App extends Component {
 
@@ -23,12 +25,14 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Switch> 
-          <Route path="(/|/todos)" component={Mytodos} />
+          <PrivateRoute path="(/|/todos)" component={Mytodos} />
           <Route path="/lists/:list([0-9]+)/todos" component={Mytodos} />
 
           <Route path="/lists" component={MyTodoLists} />
           <Route path="/signup"  component={SignUp} />
           <Route path="/login" component={Login} />
+
+          <Route path="/logout" component={Logout} />
         </Switch>
       </div>
     );

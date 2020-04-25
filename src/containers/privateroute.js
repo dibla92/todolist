@@ -1,11 +1,13 @@
 
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import Auth from '../auth/auth';
+import { UserDataContext} from '../containers/logincontext';
 
 
-export default function privateRoute(props) {
-    return Auth.getUser() ?
+export default function PrivateRoute(props) {
+    const [user] = React.useContext(UserDataContext);
+
+    return user ?
         <Route {...props}/>
     :
         <Redirect to= {

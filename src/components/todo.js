@@ -24,7 +24,7 @@ export default function todo({todoItem, toggleTodo, Id, removeTodo}) {
 
 todo.propTypes = {
     todoItem: propTypes.shape({
-        completed: propTypes.bool,
+        completed: propTypes.number,
         todo: propTypes.string,
         id: propTypes.number
     }),

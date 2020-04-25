@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { NavLink} from 'react-router-dom';
-import Auth from  '../auth/auth'
+import { UserDataContext} from '../containers/logincontext';
 
-export default function header() {
-  const user = Auth.getUser();
+export default function Header() {
+  const [user] = useContext(UserDataContext);
     return (
       <header className="App-header">
         <nav>

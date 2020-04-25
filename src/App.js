@@ -12,6 +12,7 @@ import SignUp from './components/signup';
 import MyTodoLists from './containers/mytodolists';
 import PrivateRoute from './containers/privateroute';
 import Logout from './components/logout';
+import {UserDataProvider} from './containers/logincontext';
 
 class App extends Component {
 
@@ -22,19 +23,21 @@ class App extends Component {
 
   render() {
     return (
+      <UserDataProvider>
       <div className="App">
         <Header/>
         <Switch> 
           <PrivateRoute path="(/|/todos)" component={Mytodos} />
-          <Route path="/lists/:list([0-9]+)/todos" component={Mytodos} />
+          <PrivateRoute path="/lists/:list([0-9]+)/todos" component={Mytodos} />
 
-          <Route path="/lists" component={MyTodoLists} />
+          <PrivateRoute path="/lists" component={MyTodoLists} />
           <Route path="/signup"  component={SignUp} />
           <Route path="/login" component={Login} />
 
           <Route path="/logout" component={Logout} />
         </Switch>
       </div>
+      </UserDataProvider>
     );
   }
 }

@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import {LARAVEL_API} from '../config/config';
 import Auth from './../auth/auth';
+import { UserDataContext} from '../containers/logincontext';
+
 
 const Login = (pars) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] = React.useContext(UserDataContext);
 
 
 
@@ -15,6 +16,7 @@ const Login = (pars) => {
 
         Auth.signin(email, password)
         .then(payload => {
+            setUser(payload.user);
             pars.history.push('/');
         });
     }
